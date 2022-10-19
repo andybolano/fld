@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
+@font-face {
+    font-family: 'Austin-light';
+    src: url('../fonts/austin/austin-light.ttf');
+}
+  
+
+:root {
+    --bg-color: #FFFFFF;
+    --primary-color: #45B467;
+    --secondary-color: #2E4756;
+    --tertiary-color: #6C5E4E;
+    --primary-font: 'Lato';
+    --title-font: 'Lato'
+}
+html {
+    font-size: 62.5%; 
+}
+
+body {
+    background-color: var(--bg-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    overscroll-behavior: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: var(--primary-font);
+}
+
+button {
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: var(--primary-color);
+    background-color: transparent;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--primary-font);
+    letter-spacing: 0.2rem;
+    color: var(--bg-color);
+    -webkit-transition: 0.3s cubic-bezier(0.28, 0, 0.18, 1);
+    -moz-transition: 0.3s cubic-bezier(0.28, 0, 0.18, 1);
+    transition: 0.3s cubic-bezier(0.28, 0, 0.18, 1);
+    &:hover {   
+       transform: scale(1.1);
+    }
+}
+
+h1, h2, h3, h4, h5 {
+    display: inline;
+}
+
+h1{
+    font-size: 6rem;
+    font-weight: 900;
+}
+h2{
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3.2rem;
+}
+h4 {
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+h5 {
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.container {
+    width: calc(100% - 5vw);
+    margin: auto;
+}
+
+section {
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+footer {
+    width: 100%;
+    height: 30vh;
+    background-color: var(--secondary-color);
+    padding: 2rem 0;
+    box-sizing: border-box;
+}
+
+footer .container {
+    display: flex;
+}
+footer  .logo {
+    width: 70%;
+}
+footer .information {
+    width: 30%;
+    color:var(--bg-color);
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+footer a {
+    display: block;
+    margin-top: 1rem;
+    color: var(--bg-color);
+    text-decoration: none;
+
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+input, textarea {
+    border: 0.1rem solid var(--primary-color);
+    padding: 1rem 0.5rem;
+    border-radius: 1.5rem;
+    width: calc(100% - 1.5rem);
+}
+
+.wrapper-contact {
+    display: flex;
+    width: 60vw;
+    margin: 2rem auto;
+}
+.wrapper-contact .form {
+    width: 50%;
+}
+.form .wrapper-button {
+    text-align: right;
+}

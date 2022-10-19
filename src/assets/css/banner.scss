@@ -1,0 +1,148 @@
+@import './swiper.scss';
+
+.banner {
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+    position: relative;
+    &__overlay {
+        width: 100%;
+        height: 95vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    &__image{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: repeat;
+        background-position: center;
+        -webkit-transition: 0.5s cubic-bezier(0.28, 0, 0.18, 1);
+        -moz-transition: 0.5s cubic-bezier(0.28, 0, 0.18, 1);
+        transition: 0.5s cubic-bezier(0.28, 0, 0.18, 1);
+        overflow: hidden;
+        will-change: transform;
+    }
+    hgroup {
+        position: absolute;
+        width: 60%;
+        left: 50%;
+        max-width: 900px;
+        top: calc(50% + 4rem);
+        z-index: 1;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+        -webkit-transition: 0.6s cubic-bezier(0.28, 0, 0.18, 1);
+        -moz-transition: 0.6s cubic-bezier(0.28, 0, 0.18, 1);
+        transition: 0.6s cubic-bezier(0.28, 0, 0.18, 1);
+        h1 {
+            display: block;
+            font-size: 7rem;
+            font-family: var(--title-font);
+            font-weight: 600;
+            letter-spacing: 0.2rem;
+            color: #FFFFFF;
+            line-height: 7.5rem;
+            margin: 0;
+            margin-bottom: 6rem;
+  
+        }
+        a {
+            display: block;
+            font-size: 1.4rem;
+            font-family: var(--primary-font);
+            color: #FFFFFF; 
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            line-height: 1.5rem;
+            opacity: 0;
+            cursor: pointer;
+            -webkit-transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
+            -moz-transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
+            transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
+            text-decoration: underline;
+            &:hover {
+                font-size: 1.5rem;
+            }
+        }
+    } 
+    &__zoomIn {
+        -webkit-animation: zoomIn 30s ease-in infinite;
+        animation: zoomIn 30s ease-in infinite;
+    }
+    &__social {
+        position: absolute;
+        right: 3.3rem;
+        bottom: 1rem;
+        width: 2.8rem;
+        z-index: 2;
+        div {
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-bottom: 1.6rem;
+        }
+        &--whatsapp{
+            background-image: url('../icons/social/whatsapp.svg');
+            background-size: contain;
+        }
+        &--facebook{
+            background-image: url('../icons/social/facebook.svg');
+            background-size: contain;
+        }
+        &--youtube{
+            background-image: url('../icons/social/youtube.svg');
+            background-size: contain;
+        }
+        &--instagram{
+            background-image: url('../icons/social/instagram.svg');
+            background-size: contain;
+        }
+    }
+} 
+
+@-webkit-keyframes zoomIn {
+    0% {transform: scale(1);}
+    100% {transform: scale(1.5);}
+  }
+@keyframes zoomIn {
+     0% {transform: scale(1);}
+    100% {transform: scale(1.5);}
+}
+  
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    .swiper-pagination {
+        width: 5rem;
+        position: absolute;
+        top: calc(50% + 2rem);
+        left: calc(100% - 5rem);
+        transform: translate(-50%, -50%);
+        bottom: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .swiper-pagination-bullet {
+        border-radius: 0;
+        width: 2rem;
+        height: 1.2rem;
+        background-color: var(--primary-color);
+        transition: 0.3s cubic-bezier(0.28, 0, 0.18, 1);
+        margin-bottom: 2rem !important;
+        will-change: width;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 7rem;
+    }
+}
