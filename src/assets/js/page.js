@@ -5,6 +5,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import { initBanner } from './banner'
 import { initMissions } from './missions'
+import { initMap } from './map'
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, ScrollToPlugin)
 
@@ -34,4 +35,5 @@ const animateNavbar = () => {
  initAnimationScroll()
  animateNavbar()
  initMissions()
+ initMap()
 

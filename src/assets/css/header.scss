@@ -2,7 +2,7 @@ nav {
     top:0;
     width: 100%;
     position: fixed;
-    background-color: rgb(255, 255, 255, 0.7);
+    background-color: rgb(46, 71, 86, 0.7);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     display: flex;
@@ -11,6 +11,7 @@ nav {
     height: 7.7rem;
     z-index: 2;
     transition: top 1s;
+    overflow: hidden;
 
     .menu {
         position: absolute;
@@ -38,15 +39,14 @@ nav {
                 font-weight: 600;
                 text-decoration: none;
                 font-size: 1.2rem;
-                color: var(--tertiary-color);
+                color: #FFF;
                 letter-spacing: 0.1rem;
                 text-transform: uppercase;
                 -webkit-transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
                 -moz-transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
                 transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
                 &:hover {
-                    
-                    color: var(--secondary-color)
+                    color: var(--primary-color)
                 }
             }
         }

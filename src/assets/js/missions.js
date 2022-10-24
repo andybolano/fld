@@ -15,7 +15,7 @@ const setupLinks = (scroller) => {
     const linkTargets = linkElements.map((e) => document.querySelector(e.getAttribute("href")))
     const calculatePositions = () => {
         const offset = gsap.getProperty(scroller, "y")
-        linkTargets.forEach((e, i) => __linkPositions[i] = e.getBoundingClientRect().top - offset)
+        linkTargets.forEach((e, i) => __linkPositions[i] = e.getBoundingClientRect().top - offset + 1)
     }
     
     linkElements.forEach((element, i) => {
@@ -42,7 +42,6 @@ const initTrigger = () => {
         onLeave: onLeaveOnMission,
         onEnterBack: onEnterBackOnMission,
         onLeaveBack: onLeaveBackOnMission,
-        onUpdate: self =>  self.direction === -1 ? hiddeNavbar() : ''
     })
 }
 
@@ -71,14 +70,10 @@ const hiddeNavbar = () => {
 }
 
 const animateTitle = () => {
-    const textElement = document.querySelector('.missions__title h1')
-    const titleElement = document.querySelector('.missions__title')
     const overlayElement = document.querySelector('.missions__overlay')
     const __titleTimeLine = gsap.timeline()
     __titleTimeLine
-    .to(textElement, {delay: 1,  ease: 'Power3.easeOut', duration: 0.5, fontSize: 32})
-    .to(titleElement, { top: '10%', ease: 'Power3.easeOut', duration: 0.5})
-    .to(overlayElement, { left: '-50%', ease: 'Power3.easeOut', duration: 1})
+    .to(overlayElement, { delay:2, left: '-100%', opacity:'0.5', ease: 'Power3.easeOut', duration: 3})
 }
 
 
