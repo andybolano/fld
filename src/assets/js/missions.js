@@ -3,7 +3,7 @@
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import Swiper, { Pagination, FreeMode } from 'swiper'
+import Swiper, { Pagination, FreeMode, Autoplay } from 'swiper'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -62,11 +62,15 @@ const onEnterBackOnMission = () => {
 
 const initSliderMissions = () => {
     const swiper = new Swiper("#mission-slider", {
-        modules : [Pagination, FreeMode],
+        modules : [Pagination, FreeMode, Autoplay],
         lazy: true,
         loop: false,
         slidesPerView: 'auto',
-        freeMode: true
+        freeMode: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: true,
+        },
     })
 }
 

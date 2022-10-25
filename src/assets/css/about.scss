@@ -125,13 +125,40 @@
         transition: 0.4s cubic-bezier(0.28, 0, 0.18, 1);
     }
 }
-.slide-about {
-    width: 100%;
-    background-color: var(--bg-color);
-    height: 6rem;
+
+.about-marquee {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 2vh;
+    padding: 2rem 0;
     color: #000000;
-    font-family: var(--primary-font);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	.marquee {
+		--mFontSize: 1.4rem;
+		--mRightOffset: 2.5rem;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		z-index: -1;
+		transform: translateY(-50%);
+		transition: opacity 466ms;
+		overflow-x: hidden;
+		.slide {
+			display: inline-flex;
+			flex-wrap: nowrap;
+		}
+		span {
+			font-size: var(--mFontSize, 1rem);
+			padding-left: var(--mLeftOffset, 0);
+			padding-right: var(--mRightOffset, 0);
+			display: inline-flex;
+			white-space: nowrap;
+            &::before {
+                content: '—';
+            }
+		}
+	}
 }

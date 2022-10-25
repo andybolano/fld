@@ -46,6 +46,7 @@
         height: 20vh;
         background-color: #000000;
         overflow: hidden;
+        padding: 0;
     }
     &__image {
         position: relative;
@@ -119,4 +120,5 @@
     cursor: pointer;
     width: 21vw;
     overflow: hidden;
+    padding: 0;
 }
