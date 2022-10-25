@@ -5,7 +5,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import { initBanner } from './banner'
 import { initMissions } from './missions'
-import { initMap } from './map'
 const $ = require('jquery')
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, ScrollToPlugin)
