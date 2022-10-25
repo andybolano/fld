@@ -3,6 +3,7 @@
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import Swiper, { Pagination, FreeMode } from 'swiper'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -33,50 +34,43 @@ const goTo = (linkPosition) => {
 
 const initTrigger = () => {
     setupLinks(__container)
-    ScrollTrigger.create({
-        markers: false,
-        trigger: '#missions',
-        start:"20px 40%",
-        end:"100% 80%",
-        onEnter: onEnterOnMission,
-        onLeave: onLeaveOnMission,
-        onEnterBack: onEnterBackOnMission,
-        onLeaveBack: onLeaveBackOnMission,
+
+    gsap.to(".missions__overlay", {
+        scrollTrigger: {
+            start:"20px 40%",
+            end:"100% 50%",
+            markers: false,
+            trigger: ".missions__overlay",
+            onEnter: onEnterOnMission,
+            onEnterBack: onEnterBackOnMission
+        },
+        delay: 3, 
+        left: '-80%', 
+        opacity:'0.5', 
+        ease: 'Power3.easeOut', 
+        duration: 3
     })
 }
 
 const onEnterOnMission = () => {
     goTo(__linkPositions[0])
-    animateTitle()
-}
-
-const onLeaveOnMission = () => {
-    console.log('onLeaveOnMission')
 }
 
 const onEnterBackOnMission = () => {
     goTo(__linkPositions[0])
 }
 
-const onLeaveBackOnMission = () => {
-    console.log('onLeaveBackOnMission')
+const initSliderMissions = () => {
+    const swiper = new Swiper("#mission-slider", {
+        modules : [Pagination, FreeMode],
+        lazy: true,
+        loop: false,
+        slidesPerView: 'auto',
+        freeMode: true
+    })
 }
-
-
-const hiddeNavbar = () => {
-    setTimeout(() => {
-        document.getElementById("navbar").style.top = "-7.7rem";
-    }, 1000);
-}
-
-const animateTitle = () => {
-    const overlayElement = document.querySelector('.missions__overlay')
-    const __titleTimeLine = gsap.timeline()
-    __titleTimeLine
-    .to(overlayElement, { delay:2, left: '-100%', opacity:'0.5', ease: 'Power3.easeOut', duration: 3})
-}
-
 
 export const initMissions = () => {
+    initSliderMissions()
     initTrigger()
 }
