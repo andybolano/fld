@@ -67,6 +67,5 @@ const marquee = () => {
  initAnimationScroll()
  animateNavbar()
  initMissions()
- initMap()
  marquee()
 

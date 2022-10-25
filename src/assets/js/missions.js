@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Swiper, { Pagination, FreeMode, Autoplay } from 'swiper'
+import { initMap } from './map'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -48,7 +49,10 @@ const initTrigger = () => {
         left: '-80%', 
         opacity:'0.5', 
         ease: 'Power3.easeOut', 
-        duration: 3
+        duration: 3,
+        onComplete() {
+            initMap()
+        }
     })
 }
 
