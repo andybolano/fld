@@ -4,13 +4,12 @@ import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Swiper, { Pagination, FreeMode, Autoplay } from 'swiper'
-import { initMap } from './map'
-
+import { geoJson, flyToPoint } from './map'
 gsap.registerPlugin(ScrollTrigger, SplitText)
-
 
 const __container = document.querySelector("#smooth-content")
 let __linkPositions = []
+let __swiper = undefined
 
 const setupLinks = (scroller) => {
     const linkElements = gsap.utils.toArray('.menu .anchor')
@@ -51,7 +50,7 @@ const initTrigger = () => {
         ease: 'Power3.easeOut', 
         duration: 3,
         onComplete() {
-            initMap()
+            
         }
     })
 }
@@ -65,17 +64,26 @@ const onEnterBackOnMission = () => {
 }
 
 const initSliderMissions = () => {
-    const swiper = new Swiper("#mission-slider", {
+    __swiper = new Swiper("#mission-slider", {
         modules : [Pagination, FreeMode, Autoplay],
         lazy: true,
-        loop: false,
+        loop: true,
         slidesPerView: 'auto',
-        freeMode: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: true,
-        },
+        centeredSlides: true,
+        freeMode: false,
+        on: {
+            click: function () {
+                if(!this.clickedSlide) return
+                const index = this.clickedSlide.getAttribute('data-index')
+                flyToPoint(geoJson.features[index].geometry.coordinates)
+            }
+        }
     })
+}
+
+
+export const sliderGoTo = (index) => {
+    __swiper.slideTo(index, 2000, false)
 }
 
 export const initMissions = () => {

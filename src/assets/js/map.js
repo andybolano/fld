@@ -1,60 +1,79 @@
 import mapboxgl from 'mapbox-gl';
+import { sliderGoTo } from './missions'
+let __map = undefined
 
-
+export const geoJson = {
+    'type': 'FeatureCollection',
+    'features': [
+        {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [-72.2872426, 0.2951363]
+            },
+            'properties': {
+                'id':'0',
+                'title': 'Amazonas',
+            }
+        }, {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [-77.2833573, 8.5101094]
+            },'properties': {
+                'id':'1',
+                'title': 'Guambia',
+            }
+        }, {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [-76.3933853, 3.8602729]
+            },'properties': {
+                'id':'2',
+                'title': 'Acandí',
+            }
+        }, {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [-65.7109377, 7.8899098]
+            },'properties': {
+                'id':'3',
+                'title': 'Yotoco',
+            }
+        }, {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [-68.0469615, -16.2360191]
+            },'properties': {
+                'id':'4',
+                'title': 'Bolivia',
+            }
+        }
+    ]
+}
 const map = () => {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keWJvbGFubyIsImEiOiJjandjNHhvdzkwNWFlNGFvdWVvMjYyajVhIn0.0Bb7Pjf8yJPO5icxbfglyQ'
-    const map = new mapboxgl.Map({
+    __map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/andybolano/cl9g45ya6002e14pgsiyynuhc',
         center: [-74.297333, 4.570868],
         zoom: 5
     })
 
-    map.scrollZoom.disable()
+    __map.scrollZoom.disable()
 
-    map.on('load', () => {
-        map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 })
+    __map.on('load', () => {
+        __map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 })
 
-        map.addSource('dot-point', {
+        __map.addSource('dot-point', {
             'type': 'geojson',
-            'data': {
-                'type': 'FeatureCollection',
-                'features': [
-                    {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-72.2872426, 0.2951363]
-                        }
-                    }, {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-77.2833573, 8.5101094]
-                        }
-                    }, {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-76.3933853, 3.8602729]
-                        }
-                    }, {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-65.7109377, 7.8899098]
-                        }
-                    }, {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-68.0469615, -16.2360191]
-                        }
-                    }
-                ]
-            }
-        });
-        map.addLayer({
+            'data': geoJson
+        })
+
+        __map.addLayer({
             'id': 'location-marker',
             'type': 'symbol',
             'source': 'dot-point',
@@ -65,20 +84,27 @@ const map = () => {
     })
 
     // Center the map on the coordinates of any clicked circle from the 'circle' layer.
-    map.on('click', 'location-marker', (e) => {
-        map.flyTo({
-            center: e.features[0].geometry.coordinates
-        })
+    __map.on('click', 'location-marker', (e) => {
+        flyToPoint(e.features[0].geometry.coordinates)
+        sliderGoTo(e.features[0].properties.id)
     })
 
     // Change the cursor to a pointer when the it enters a feature in the 'circle' layer.
-    map.on('mouseenter', 'location-marker', () => {
-        map.getCanvas().style.cursor = 'pointer'
+    __map.on('mouseenter', 'location-marker', () => {
+        __map.getCanvas().style.cursor = 'pointer'
     })
 
     // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'location-marker', () => {
-        map.getCanvas().style.cursor = ''
+    __map.on('mouseleave', 'location-marker', () => {
+        __map.getCanvas().style.cursor = ''
+    })
+
+    __map.on('style.load', () => {
+        __map.setFog({
+            color: 'transparent',
+            'high-color': 'transparent',
+            'horizon-blend': 0
+        })
     })
 
     const size = 200
@@ -146,7 +172,7 @@ const map = () => {
 
             // Continuously repaint the map, resulting
             // in the smooth animation of the dot.
-            map.triggerRepaint();
+            __map.triggerRepaint();
 
             // Return `true` to let the map know that the image was updated.
             return true;
@@ -156,7 +182,15 @@ const map = () => {
 }
 
 
-
+export const flyToPoint = (coordinates) => {
+    try {
+        __map.flyTo({
+            center: coordinates
+        })
+    } catch (e) {
+        console.log(console.error(e))
+    }
+}
 
 export const initMap = () => {
     map()
