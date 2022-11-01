@@ -54,7 +54,7 @@
             box-sizing: border-box;
             position: relative;
             div {
-                position: absolute;
+                position: relative;
                 top: 50%;
                 transform: translateY(-50%);
             }
@@ -99,7 +99,7 @@
         z-index: 1;
         position: relative;
         div {
-            position: absolute;
+            position: relative;
             top: 50%;
             transform: translateY(-50%);
         }

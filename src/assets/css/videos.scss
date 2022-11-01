@@ -1,0 +1,16 @@
+.videos {
+    background: var(--bg-gray);
+    height: auto;
+    min-height: 100vh;
+    &__wrapper {
+        padding: 5rem var(--left-container);
+        width: 100%;
+        box-sizing: border-box;
+        h1, h5 {
+            display: block;
+        }
+    }
+    &__item {
+
+    }
+}

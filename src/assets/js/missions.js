@@ -3,7 +3,7 @@
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import Swiper, { Pagination, FreeMode, Autoplay } from 'swiper'
+import Swiper, { Pagination, FreeMode } from 'swiper'
 import { geoJson, flyToPoint } from './map'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -65,7 +65,7 @@ const onEnterBackOnMission = () => {
 
 const initSliderMissions = () => {
     __swiper = new Swiper("#mission-slider", {
-        modules : [Pagination, FreeMode, Autoplay],
+        modules : [Pagination, FreeMode],
         lazy: true,
         loop: true,
         slidesPerView: 'auto',
