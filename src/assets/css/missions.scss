@@ -28,6 +28,7 @@
         left: 0;
         transform: translate(0, -50%);
         width: 40vw;
+        max-width: 40rem;
         h1, p {
             color: var(--bg-color);
             font-weight: 600;
