@@ -5,212 +5,260 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><%= titulo %></title>
+  <style>
+    #loading {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: #45b467;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        text-align: center;
+        font-family: Arial;
+    }
+  </style>
 </head>
 <body>
-    <nav id="navbar">
-        <div class="logo">
-            <img src="./assets/images/logo-fld.svg">
-        </div>
-        <div class="menu">
-            <ul>
-                <li>
-                    <a href="#missions" class="anchor">Misiones</a>
-                </li>
-                <li>
-                    <a href="">Educación</a>
-                </li>
-                <li>
-                    <a href="">Eventos</a>
-                </li>
-                <li>
-                    <a href="">Articulos</a>
-                </li>
-            </ul>
-        </div>
+    <div id="loading">
         <div>
-            <button>DONAR</button>
-        </div>
-    </nav>
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
-            <section class="banner">
-                <div id="banner-slider" class="swiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="banner__overlay">
-                            <hgroup>
-                                <h1 class="banner__title">
-                                    Llevando esperanza y salvación a tu hogar
-                                </h1>
-                                <a class="banner__description">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                </a>
-                            </hgroup>
-                        </div>
-                        <article id="banner-image--0" class="banner__image" style="background-image: url('./assets/images/image-banner.jpg');"></article>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="banner__overlay">
-                            <hgroup>
-                                <h1 class="banner__title">
-                                    Programa de Sábado en casa, live stream
-                                </h1>
-                                <a class="banner__description">
-                                    Cada Sábado. 9:45 am, hora colombiana.
-                                </a>
-                            </hgroup>
-                        </div>
-                        <article id="banner-image--1" class="banner__image" style="background-image: url('./assets/images/image-banner-2.jpg');"></article>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="banner__overlay">
-                            <hgroup>
-                                <h1 class="banner__title">
-                                    Por eso voy, reporte misionero Amazonas
-                                </h1>
-                                <a class="banner__description">
-                                    Sábado 1 de Octubre 9:30 am, hora colombiana.
-                                </a>
-                            </hgroup>
-                        </div>
-                        <article id="banner-image--2" class="banner__image" style="background-image: url('./assets/images/image-banner-3.jpg');"></article>
-                      </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <div class="banner__social">
-                    <a href="">
-                        <div class="banner__social--whatsapp"></div>
-                    </a>
-                    <a href="">
-                        <div class="banner__social--youtube"></div>
-                    </a>
-                    <a href="">
-                        <div class="banner__social--instagram"></div>
-                    </a>
-                    <a href="">
-                        <div class="banner__social--facebook"></div>
-                    </a>
-                </div>
-            </section>
-            <section class="about-us">
-                <div class="wrapper-about">
-                    <div class="wrapper-about__information">
-                        <div class="wrapper-about__texture" data-speed="0.6"></div>
-                        <div class="wrapper-about__text">
-                            <h5>Acerca de nosotros</h5>
-                            <p>
-                                <b>Fundación Las Delicias</b> es una institución sin ánimo de lucro, cuyo objetivo es el desarrollo integral del hombre y del medio que le rodea. Creemos firmemente que el verdadero desarrollo del hombre sólo se logra cuando éste se pone en armonía con los principios que rigen la vida, tal como los ha revelado nuestro Creador.
-                            </p>
-                            <button class="btn">Saber más</button>
-                        </div>
-                    </div>
-                    <div class="wrapper-about__entry">
-                        <div class="wrapper-about__entry--one">
-                            <div>
-                                <h5>Misionero activos</h5>
-                                <p>+ De 86 when an unknown printer took a galley of type and scrambled it to make.</p>
-                                <button class="btn">Saber más</button>
-                            </div>
-                            
-                        </div>
-                        <div class="wrapper-about__entry--two"> 
-                            <div class="wrapper-about__overlay">
-                                <div>   
-                                    <h5>Familias que apoyan</h5>
-                                    <p>+ De 86 when an unknown printer took a galley</p>
-                                    <button class="btn">Ver más</button>    
-                                </div>
-                            </div>
-                            <div class="wrapper-about__bg-entry"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-marquee">
-                    <div class="marquee">
-                        <div class="slide">
-                            <span>¿Con qué limpiará el joven su camino? Con guardar tu palabra. Con todo mi corazón te he buscado; No me dejes desviarme de tus mandamientos. En mi corazón he guardado tus dichos, Para no pecar contra ti.</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="missions" class="missions">
-                
-                    <div class="missions__overlay">
-                        <div class="missions__title">
-                            <p>MISIONES</p>
-                            <h1>Proyectos Misioneros</h1>
-                        </div>
-                    </div>
-                    <div class="missions__map" id="map"></div>
-                    <div id="mission-slider" class="swiper">
-                        <div class="swiper-wrapper swiper-mission">
-                            <div class="swiper-slide wrapper-slide" data-index="0">
-                                <div class="missions__status missions__status--active">Activo</div>
-                                <div class="missions__overlay-image">
-                                    <p>Amazonas</p>
-                                </div>
-                                <article class="missions__image" style="background-image: url('./assets/images/missions/1.jpg');"></article>
-                            </div>
-                            <div class="swiper-slide wrapper-slide" data-index="1">
-                                <div class="missions__status missions__status--inactive">Inactivo</div>
-                                <div class="missions__overlay-image">
-                                    <p>Guambía</p>
-                                </div>
-                                <article class="missions__image" style="background-image: url('./assets/images/missions/2.jpg');"></article>
-                            </div>
-                            <div class="swiper-slide wrapper-slide" data-index="2">
-                                <div class="missions__status missions__status--active">Activo</div>
-                                <div class="missions__overlay-image">
-                                    <p>Acandí</p>
-                                </div>
-                                <article class="missions__image" style="background-image: url('./assets/images/missions/3.jpg');"></article>
-                            </div>
-                            <div class="swiper-slide wrapper-slide" data-index="3">
-                                <div class="missions__status missions__status--active">Activo</div>
-                                <div class="missions__overlay-image">
-                                    <p>Yotoco</p>
-                                </div>
-                                <article class="missions__image" style="background-image: url('./assets/images/missions/4.jpg');"></article>
-                            </div>
-                            <div class="swiper-slide wrapper-slide" data-index="4">
-                                <div class="missions__status missions__status--inactive">Inactivo</div>
-                                <div class="missions__overlay-image">
-                                    <p>Bolivia</p>
-                                </div>
-                                <article class="missions__image" style="background-image: url('./assets/images/missions/5.jpg');"></article>
-                            </div>
-                        </div>
-                    </div>
-
-            </section>
-            <section class="education">
-                <div class="education__wrapper">
-                    <div class="education__text">
-                        <h5>Educación</h5>
-                        <h1>Estudia con nosotros</h1>
-                        <p>
-                            Fundación Las Delicias es una institución sin ánimo de lucro, cuyo objetivo es el desarrollo integral del hombre y del medio que le rodea.
-                        </p>
-                    </div>
-                    <div class="education__call-action">
-                        <button class="btn-circle btn-circle--primary">SABER MÁS</button>
-                        <img src="./assets/images/education-behind.jpg" class="education__images education__images--behind">
-                        <img src="./assets/images/education-under.jpg" class="education__images">
-                    </div>
-                </div>
-            </section>
-            <section class="videos">
-                <div class="videos__wrapper">
-                    <h5>DELICIAS TV</h5>
-                    <h1>Escuchanos por aquí</h1>
-                </div>
-            </section>
-            <footer>
-
-            </footer>
+            <img src="./assets/images/logo-fld.svg" style="width: 300px;">
+            <p>Cargando...</p>
         </div>
     </div>
+    <div class="page">
+        <nav id="navbar">
+            <div class="logo">
+                <img src="./assets/images/logo-fld.svg">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="#missions" class="anchor">Misiones</a>
+                    </li>
+                    <li>
+                        <a href="">Educación</a>
+                    </li>
+                    <li>
+                        <a href="">Eventos</a>
+                    </li>
+                    <li>
+                        <a href="">Articulos</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button>DONAR</button>
+            </div>
+        </nav>
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                <section class="banner">
+                    <div id="banner-slider" class="swiper">
+                        <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="banner__overlay">
+                                <hgroup>
+                                    <h1 class="banner__title">
+                                        Llevando esperanza y salvación a tu hogar
+                                    </h1>
+                                    <a class="banner__description">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    </a>
+                                </hgroup>
+                            </div>
+                            <article id="banner-image--0" class="banner__image" style="background-image: url('./assets/images/image-banner.jpg');"></article>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner__overlay">
+                                <hgroup>
+                                    <h1 class="banner__title">
+                                        Programa de Sábado en casa, live stream
+                                    </h1>
+                                    <a class="banner__description">
+                                        Cada Sábado. 9:45 am, hora colombiana.
+                                    </a>
+                                </hgroup>
+                            </div>
+                            <article id="banner-image--1" class="banner__image" style="background-image: url('./assets/images/image-banner-2.jpg');"></article>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner__overlay">
+                                <hgroup>
+                                    <h1 class="banner__title">
+                                        Por eso voy, reporte misionero Amazonas
+                                    </h1>
+                                    <a class="banner__description">
+                                        Sábado 1 de Octubre 9:30 am, hora colombiana.
+                                    </a>
+                                </hgroup>
+                            </div>
+                            <article id="banner-image--2" class="banner__image" style="background-image: url('./assets/images/image-banner-3.jpg');"></article>
+                        </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="banner__social">
+                        <a href="">
+                            <div class="banner__social--whatsapp"></div>
+                        </a>
+                        <a href="">
+                            <div class="banner__social--youtube"></div>
+                        </a>
+                        <a href="">
+                            <div class="banner__social--instagram"></div>
+                        </a>
+                        <a href="">
+                            <div class="banner__social--facebook"></div>
+                        </a>
+                    </div>
+                </section>
+                <section class="about-us">
+                    <div class="wrapper-about">
+                        <div class="wrapper-about__information">
+                            <div class="wrapper-about__texture" data-speed="0.6"></div>
+                            <div class="wrapper-about__text">
+                                <h5>Acerca de nosotros</h5>
+                                <p>
+                                    <b>Fundación Las Delicias</b> es una institución sin ánimo de lucro, cuyo objetivo es el desarrollo integral del hombre y del medio que le rodea. Creemos firmemente que el verdadero desarrollo del hombre sólo se logra cuando éste se pone en armonía con los principios que rigen la vida, tal como los ha revelado nuestro Creador.
+                                </p>
+                                <button class="btn">Saber más</button>
+                            </div>
+                        </div>
+                        <div class="wrapper-about__entry">
+                            <div class="wrapper-about__entry--one">
+                                <div>
+                                    <h5>Misionero activos</h5>
+                                    <p>+ De 86 when an unknown printer took a galley of type and scrambled it to make.</p>
+                                    <button class="btn">Saber más</button>
+                                </div>
+                                
+                            </div>
+                            <div class="wrapper-about__entry--two"> 
+                                <div class="wrapper-about__overlay">
+                                    <div>   
+                                        <h5>Familias que apoyan</h5>
+                                        <p>+ De 86 when an unknown printer took a galley</p>
+                                        <button class="btn">Ver más</button>    
+                                    </div>
+                                </div>
+                                <div class="wrapper-about__bg-entry"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-marquee">
+                        <div class="marquee">
+                            <div class="slide">
+                                <span>¿Con qué limpiará el joven su camino? Con guardar tu palabra. Con todo mi corazón te he buscado; No me dejes desviarme de tus mandamientos. En mi corazón he guardado tus dichos, Para no pecar contra ti.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="missions" class="missions">
+                    
+                        <div class="missions__overlay">
+                            <div class="missions__title">
+                                <p>MISIONES</p>
+                                <h1>Proyectos Misioneros</h1>
+                            </div>
+                        </div>
+                        <div class="missions__map" id="map"></div>
+                        <div id="mission-slider" class="swiper">
+                            <div class="swiper-wrapper swiper-mission">
+                                <div class="swiper-slide wrapper-slide" data-index="0">
+                                    <div class="missions__status missions__status--active">Activo</div>
+                                    <div class="missions__overlay-image">
+                                        <p>Amazonas</p>
+                                    </div>
+                                    <article class="missions__image" style="background-image: url('./assets/images/missions/1.jpg');"></article>
+                                </div>
+                                <div class="swiper-slide wrapper-slide" data-index="1">
+                                    <div class="missions__status missions__status--inactive">Inactivo</div>
+                                    <div class="missions__overlay-image">
+                                        <p>Guambía</p>
+                                    </div>
+                                    <article class="missions__image" style="background-image: url('./assets/images/missions/2.jpg');"></article>
+                                </div>
+                                <div class="swiper-slide wrapper-slide" data-index="2">
+                                    <div class="missions__status missions__status--active">Activo</div>
+                                    <div class="missions__overlay-image">
+                                        <p>Acandí</p>
+                                    </div>
+                                    <article class="missions__image" style="background-image: url('./assets/images/missions/3.jpg');"></article>
+                                </div>
+                                <div class="swiper-slide wrapper-slide" data-index="3">
+                                    <div class="missions__status missions__status--active">Activo</div>
+                                    <div class="missions__overlay-image">
+                                        <p>Yotoco</p>
+                                    </div>
+                                    <article class="missions__image" style="background-image: url('./assets/images/missions/4.jpg');"></article>
+                                </div>
+                                <div class="swiper-slide wrapper-slide" data-index="4">
+                                    <div class="missions__status missions__status--inactive">Inactivo</div>
+                                    <div class="missions__overlay-image">
+                                        <p>Bolivia</p>
+                                    </div>
+                                    <article class="missions__image" style="background-image: url('./assets/images/missions/5.jpg');"></article>
+                                </div>
+                            </div>
+                        </div>
+
+                </section>
+                <section class="education">
+                    <div class="education__wrapper">
+                        <div class="education__text">
+                            <h5>Educación</h5>
+                            <h1>Estudia con nosotros</h1>
+                            <p>
+                                Fundación Las Delicias es una institución sin ánimo de lucro, cuyo objetivo es el desarrollo integral del hombre y del medio que le rodea.
+                            </p>
+                        </div>
+                        <div class="education__call-action">
+                            <button class="btn-circle btn-circle--primary">SABER MÁS</button>
+                            <div class="education__images education__images--behind"></div>
+                            <div class="education__images education__images--under"></div>
+                            <!--<img src="./assets/images/education-behind.jpg" class="education__images education__images--behind">
+                            <img src="./assets/images/education-under.jpg" class="education__images">-->
+                        </div>
+                    </div>
+                </section>
+                <section class="videos">
+                    <div class="videos__wrapper">
+                        <h5>DELICIAS TV</h5>
+                        <h1>Escuchanos por aquí</h1>
+                    </div>
+                </section>
+                <footer>
+
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+        function onReady(callback) {
+            document.body.style.overflow = 'hidden';
+            const intervalId = window.setInterval(function() {
+                if (document.getElementsByTagName('body')[0] !== undefined) {
+                window.clearInterval(intervalId);
+                callback.call(this);
+                }
+            }, 1000);
+        }
+
+        function setVisible(selector, visible) {
+            document.querySelector(selector).style.display = visible ? 'block' : 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        onReady(function() {
+            setVisible('.page', true);
+            setVisible('#loading', false);
+        });
+    </script>
     <script src="./main.js"></script>
 </body>
 </html>

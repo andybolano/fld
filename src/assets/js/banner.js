@@ -10,8 +10,8 @@ const animateTextBanner = (titleElement, descriptionElement) => {
     const titleSplit = new SplitText(titleElement, configuration)
     __textBannerTimeLine.set([descriptionElement], { opacity : 0, y: 0 })
     __textBannerTimeLine
-        .from(titleSplit.lines, { delay: 1, duration: 2,  ease: 'Power3.easeOut', opacity:0, rotationX:-10, force3D:true, transformOrigin:"top center -150", stagger: 0.5})
-        .to(descriptionElement, { duration: 0.5, opacity : 1, y: -10, force3D: true })      
+        .from(titleSplit.lines, { delay: 1, duration: 2,  ease: 'Power3.easeOut', opacity:0, rotationX:-10, force3D: false, transformOrigin:"top center -150", stagger: 0.5})
+        .to(descriptionElement, { duration: 0.5, opacity : 1, y: -10, force3D: false })      
 }
 
 const banner = () => {
