@@ -11,7 +11,6 @@ const $ = require('jquery')
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, ScrollToPlugin)
 
 const initAnimationScroll = () => {
-    console.log(1)
     ScrollSmoother.create({
         smooth: 1,
         effects: true,
