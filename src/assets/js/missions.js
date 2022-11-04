@@ -5,6 +5,8 @@ import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Swiper, { Pagination, FreeMode } from 'swiper'
 import { geoJson, flyToPoint } from './map'
+const $ = require('jquery')
+
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 const __container = document.querySelector("#smooth-content")
@@ -74,16 +76,41 @@ const initSliderMissions = () => {
         on: {
             click: function () {
                 if(!this.clickedSlide) return
-                const index = this.clickedSlide.getAttribute('data-index')
+                const index = this.clickedSlide.getAttribute('id')
                 flyToPoint(geoJson.features[index].geometry.coordinates)
+                showMissionDescription(this.clickedSlide)
             }
         }
     })
+
+    $('.swiper-wrapper').on('mouseenter', function(e){
+        hiddenMissionDescription()
+    })
 }
 
+const showMissionDescription = (element) => {
+    const attrutesElement = element.getBoundingClientRect()
+    $("#mission-description").css(
+        {
+            "opacity": "1", 
+            "width": attrutesElement.width+'px',
+            "left": attrutesElement.left+'px',
+        }
+    )
+}
+
+const hiddenMissionDescription = () => {
+    $("#mission-description").css({"opacity": "0", 'width': 0})
+}
 
 export const sliderGoTo = (index) => {
+    hiddenMissionDescription()
     __swiper.slideTo(index, 2000, false)
+    setTimeout(()=> {
+        showMissionDescription(document.getElementById(index))
+    },2000)
+   
+
 }
 
 export const initMissions = () => {

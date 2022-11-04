@@ -1,5 +1,17 @@
 .missions {
     position: relative;
+    &__description {
+        position: absolute;
+        height: 40vh;
+        background-color: var(--bg-color);
+        z-index: 5;
+        opacity: 0;
+        will-change: opacity width left height;
+        bottom: 0;
+        -webkit-transition: 0.4s cubic-bezier(0.28, 0, 0.18, 1);
+        -moz-transition: 0.4s cubic-bezier(0.28, 0, 0.18, 1);
+        transition: 0.4s cubic-bezier(0.28, 0, 0.18, 1);
+    }
     &__map {
         width: 100%;
         height: 80vh;
