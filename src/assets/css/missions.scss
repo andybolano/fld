@@ -2,7 +2,7 @@
     position: relative;
     &__description {
         position: absolute;
-        height: 40vh;
+        height: 0;
         background-color: var(--bg-color);
         z-index: 5;
         opacity: 0;
@@ -145,4 +145,8 @@
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
+  }
+
+  #mission-slider {
+    background-color: var(--secondary-color);
   }

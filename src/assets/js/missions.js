@@ -92,15 +92,23 @@ const showMissionDescription = (element) => {
     const attrutesElement = element.getBoundingClientRect()
     $("#mission-description").css(
         {
-            "opacity": "1", 
             "width": attrutesElement.width+'px',
             "left": attrutesElement.left+'px',
         }
     )
+    setTimeout(()=> {
+        $("#mission-description").css(
+            {
+                "opacity": "1", 
+                "height": "40vh"
+            }
+        )
+    }, 300)
+    
 }
 
 const hiddenMissionDescription = () => {
-    $("#mission-description").css({"opacity": "0", 'width': 0})
+    $("#mission-description").css({"opacity": "0", 'height': 0})
 }
 
 export const sliderGoTo = (index) => {
