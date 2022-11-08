@@ -100,7 +100,7 @@ const showMissionDescription = (element) => {
         $("#mission-description").css(
             {
                 "opacity": "1", 
-                "height": "40vh"
+                "height": "48vh"
             }
         )
     }, 300)
