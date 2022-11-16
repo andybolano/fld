@@ -9,6 +9,8 @@ import { initMap } from './map'
 const $ = require('jquery')
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, ScrollToPlugin)
+const __container = document.querySelector("#smooth-content")
+
 
 const initAnimationScroll = () => {
     ScrollSmoother.create({
@@ -16,6 +18,30 @@ const initAnimationScroll = () => {
         effects: true,
         smoothTouch: 0.1
     })
+}
+
+const setupLinks = (scroller) => {
+    let __linkPositions = []
+    const linkElements = gsap.utils.toArray('.menu .anchor')
+    const linkTargets = linkElements.map((e) => document.querySelector(e.getAttribute("href")))
+    const calculatePositions = () => {
+        const offset = gsap.getProperty(scroller, "y")
+        linkTargets.forEach((e, i) => __linkPositions[i] = e.getBoundingClientRect().top - offset + 1)
+        initMissions(__linkPositions[0])
+    }
+    
+    linkElements.forEach((element, i) => {
+      element.addEventListener("click", e => {
+        e.preventDefault();
+        goTo(__linkPositions[i])
+      })
+    }) 
+    ScrollTrigger.addEventListener("refresh", calculatePositions)
+}
+
+
+export const goTo = (linkPosition) => {
+    gsap.to(window, {scrollTo: linkPosition, ease: "power4", overwrite: true})
 }
 
 const animateNavbar = () => {
@@ -66,7 +92,6 @@ const marquee = () => {
  initBanner()
  initAnimationScroll()
  animateNavbar()
- initMissions()
  marquee()
  initMap()
-
+ setupLinks(__container) 

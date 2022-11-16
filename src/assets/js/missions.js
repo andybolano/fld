@@ -5,38 +5,15 @@ import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Swiper, { Pagination, FreeMode } from 'swiper'
 import { geoJson, flyToPoint } from './map'
+import { goTo } from './page'
 const $ = require('jquery')
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
-const __container = document.querySelector("#smooth-content")
-let __linkPositions = []
 let __swiper = undefined
-
-const setupLinks = (scroller) => {
-    const linkElements = gsap.utils.toArray('.menu .anchor')
-    const linkTargets = linkElements.map((e) => document.querySelector(e.getAttribute("href")))
-    const calculatePositions = () => {
-        const offset = gsap.getProperty(scroller, "y")
-        linkTargets.forEach((e, i) => __linkPositions[i] = e.getBoundingClientRect().top - offset + 1)
-    }
-    
-    linkElements.forEach((element, i) => {
-      element.addEventListener("click", e => {
-        e.preventDefault();
-        goTo(__linkPositions[i])
-      })
-    }) 
-    ScrollTrigger.addEventListener("refresh", calculatePositions);
-}
-
-const goTo = (linkPosition) => {
-    gsap.to(window, {scrollTo: linkPosition, ease: "power4", overwrite: true})
-}
+let __linkMission = undefined
 
 const initTrigger = () => {
-    setupLinks(__container)
-
     gsap.to(".missions__overlay", {
         scrollTrigger: {
             start:"20px 40%",
@@ -58,11 +35,11 @@ const initTrigger = () => {
 }
 
 const onEnterOnMission = () => {
-    goTo(__linkPositions[0])
+    goTo(__linkMission)
 }
 
 const onEnterBackOnMission = () => {
-    goTo(__linkPositions[0])
+    goTo(__linkMission)
 }
 
 const initSliderMissions = () => {
@@ -113,15 +90,15 @@ const hiddenMissionDescription = () => {
 
 export const sliderGoTo = (index) => {
     hiddenMissionDescription()
-    __swiper.slideTo(index, 2000, false)
+    __swiper.slideTo(index, 1000, false)
     setTimeout(()=> {
         showMissionDescription(document.getElementById(index))
-    },2000)
-   
+    },1000)
 
 }
 
-export const initMissions = () => {
+export const initMissions = (linkMission) => {
+    __linkMission = linkMission
     initSliderMissions()
     initTrigger()
 }
