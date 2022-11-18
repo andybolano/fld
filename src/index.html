@@ -38,20 +38,30 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="#aboutus">Nosotros</a>
+                        <a href="#aboutus" class="anchor">Nosotros</a>
                     </li>
                     <li>
                         <a href="#missions" class="anchor">Misiones</a>
                     </li>
                     <li>
-                        <a href="#education">Educación</a>
+                        <a href="#education" class="anchor">Educación</a>
                     </li>
                     <li>
-                        <a href="#videos">Recursos</a>
+                        <a href="#videos" class="anchor">Delicias TV</a>
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class="sub-menu">
+                <div>
+                    <ul>
+                        <li>
+                            <a href="#events" class="anchor">Eventos</a>
+                        </li>
+                        <li>
+                            <a href="#articles" class="anchor">Articulos</a>
+                        </li>
+                    </ul>
+                </div>
                 <button>DONAR</button>
             </div>
         </nav>
@@ -247,7 +257,7 @@
                     </div>
                 </section>
                 <section id="videos" class="videos">
-                    <div class="videos__wrapper">
+                    <div class="container videos__wrapper">
                         <h5>DELICIAS TV</h5>
                         <h1>Escuchanos por aquí</h1>
                         <div class="videos__principal">
@@ -287,30 +297,74 @@
                     </div>
                 </section>
                 <footer>
-
+                    <div class="footer">
+                        <div class="container footer__wrapper">
+                            <div>
+                                <div class="footer__logo"></div>
+                                <div class="footer__social">
+                                    <a href="">
+                                        <div class="footer__social--facebook"></div>
+                                    </a>
+                                    <a href="">
+                                        <div class="footer__social--youtube"></div>
+                                    </a>
+                                    <a href="">
+                                        <div class="footer__social--instagram"></div>
+                                    </a>
+                                    <a href="">
+                                        <div class="footer__social--whatsapp"></div>
+                                    </a>
+                                    <a href="">
+                                        <div class="footer__social--youtube"></div>
+                                    </a>
+                                   
+                                    
+                                </div>
+                            </div>
+                            <span class="footer__menu">
+                                <h5>ENLACES RAPIDOS</h5>
+                                <ul>
+                                    <li><a href="#">Eventos</a></li>
+                                    <li><a href="#">Ministerios Asociados</a></li>
+                                    <li><a href="#">Academia</a></li>
+                                    <li><a href="#">Adminisiones</a></li>
+                                    <li><a href="#">Articulos</a></li>
+                                </ul>
+                            </span>
+                            <span class="footer__menu">
+                                <h5>LEGAL</h5>
+                                <ul>
+                                    <li><a href="#">Politica de privacidad</a></li>
+                                    <li><a href="#">Politica de tratamiento de datos</a></li>
+                                    <li><a href="#">Documentos legales</a></li>
+                                </ul>
+                            </span>
+                            
+                        </div>
+                    </div>
                 </footer>
             </div>
         </div>
     </div>
     <script>
         function onReady(callback) {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'
             const intervalId = window.setInterval(function() {
                 if (document.getElementsByTagName('body')[0] !== undefined) {
                 window.clearInterval(intervalId);
-                callback.call(this);
+                    callback.call(this);
                 }
-            }, 1000);
+            }, 1000)
         }
 
         function setVisible(selector, visible) {
-            document.querySelector(selector).style.display = visible ? 'block' : 'none';
-            document.body.style.overflow = 'auto';
+            document.querySelector(selector).style.display = visible ? 'block' : 'none'
+            document.body.style.overflow = 'auto'
         }
 
         onReady(function() {
-            setVisible('.page', true);
-            setVisible('#loading', false);
+            setVisible('.page', true)
+            setVisible('#loading', false)
         });
     </script>
 </body>

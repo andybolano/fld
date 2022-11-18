@@ -97,7 +97,7 @@ h5 {
 }
 
 .container {
-    width: calc(100% - 5vw);
+    width: calc(100% - 18vw);
     margin: auto;
 }
 
@@ -108,33 +108,79 @@ section {
 
 footer {
     width: 100%;
-    height: 30vh;
+    height: 40vh;
     background-color: var(--secondary-color);
     padding: 2rem 0;
     box-sizing: border-box;
+    position: relative;
 }
 
-footer .container {
+.footer {
     display: flex;
-}
-footer  .logo {
-    width: 70%;
-}
-footer .information {
-    width: 30%;
-    color:var(--bg-color);
-    display: flex;
-    justify-content: flex-end;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        height: 30vh;
+        > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+    &__logo {
+        width: 200px;
+        height: 90px;
+        background-image: url('../images/logo-fld.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &__social {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        z-index: 2;
+        div {
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-left: 1.6rem;
+        }
+        &--whatsapp{
+            background-image: url('../icons/social/whatsapp.svg');
+            background-size: contain;
+        }
+        &--facebook{
+            background-image: url('../icons/social/facebook.svg');
+            background-size: contain;
+        }
+        &--youtube{
+            background-image: url('../icons/social/youtube.svg');
+            background-size: contain;
+        }
+        &--instagram{
+            background-image: url('../icons/social/instagram.svg');
+            background-size: contain;
+        }
+    }
+    &__menu {
+       margin-top: 2rem; 
+       color: var(--bg-color);
+       font-family: var(--primary-font);
+       ul {
+            list-style: none;
+            padding: 0;
+            li {
+                padding: 0.5rem 0;
+                a {
+                    text-decoration: none;
+                    color: var(--bg-color);
+                }
+            }
+       }
+    }
 }
 
-
-footer a {
-    display: block;
-    margin-top: 1rem;
-    color: var(--bg-color);
-    text-decoration: none;
-
-}
 
 .form-group {
     text-align: left;

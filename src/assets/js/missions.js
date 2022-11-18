@@ -35,11 +35,11 @@ const initTrigger = () => {
 }
 
 const onEnterOnMission = () => {
-    goTo(__linkMission)
+    //goTo(__linkMission)
 }
 
 const onEnterBackOnMission = () => {
-    goTo(__linkMission)
+    //goTo(__linkMission)
 }
 
 const initSliderMissions = () => {

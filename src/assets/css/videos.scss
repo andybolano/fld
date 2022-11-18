@@ -4,8 +4,7 @@
     min-height: 100vh;
     padding-bottom: 2rem;
     &__wrapper {
-        padding: 5rem var(--left-container);
-        width: 100%;
+        padding: 5rem 0;
         box-sizing: border-box;
         h1, h5 {
             display: block;

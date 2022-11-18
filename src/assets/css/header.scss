@@ -58,4 +58,13 @@ nav {
         color: var(--bg-color);
         font-family: var(--primary-font), sans-serif;
     }
+    .sub-menu {
+        display: flex;
+        align-items: center;
+        ul li a{
+            text-transform: capitalize;
+            font-weight: 500;
+            font-size: 1.5rem;
+        }
+    }
 }

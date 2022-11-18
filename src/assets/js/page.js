@@ -14,9 +14,11 @@ const __container = document.querySelector("#smooth-content")
 
 const initAnimationScroll = () => {
     ScrollSmoother.create({
-        smooth: 1,
+        smooth: 1.5,
         effects: true,
-        smoothTouch: 0.1
+        normalizeScroll: true,
+        ignoreMobileResize: true,
+        smoothTouch: 0.1,
     })
 }
 
