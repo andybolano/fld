@@ -4,7 +4,10 @@
 }
 .wrapper-about {
     display: flex;
-
+    flex-direction: row;
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
     &__information {
         background-color: var(--primary-color);
         width: 65vw;
@@ -13,6 +16,10 @@
         display: flex;
         color: var(--bg-color);
         overflow: hidden;
+        @media (max-width: 800px) {
+            width: 100%;
+            height: auto;
+        }
     }
 
     &__texture {
@@ -21,22 +28,37 @@
         background-image: url('../images/texture-about.jpg');
         background-size: cover;
         background-repeat: repeat;
+        @media (max-width: 800px) {
+            display: none;
+        }
     }
 
     &__text {
         width: calc(100% - 7rem);
         padding: 8rem;
         box-sizing: border-box;
+        @media (max-width: 800px) {
+            width: 100%;
+            padding: 4rem 2rem;
+        }
         p {
             margin-top: 6rem;
             font-size: 3.2rem;
             line-height: 4rem;
             font-family: var(--primary-font);
             font-weight: 400;
+            @media (max-width: 800px) {
+                margin-top: 2rem;
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+            }
         }
         .btn {
             margin-top: 4rem;
-            color: var(--tertiary-color)
+            color: var(--tertiary-color);
+            @media (max-width: 800px) {
+                margin-top: 0rem;
+            }
         }
     }
 
@@ -44,6 +66,9 @@
         width: 35vw;
         display: flex;
         flex-direction: column;
+        @media (max-width: 800px) {
+           width: 100%;
+        }
 
         &--one {
             padding: 0 6rem;
@@ -53,10 +78,19 @@
             background-color: var(--secondary-color);
             box-sizing: border-box;
             position: relative;
+            @media (max-width: 800px) {
+                height: auto;
+                max-height: auto;
+                padding: 4rem 2rem;
+            }
             div {
                 position: relative;
                 top: 50%;
                 transform: translateY(-50%);
+                @media (max-width: 800px) {
+                    top: 0;
+                    transform: none;
+                }
             }
             h5, p {
                 color: var(--bg-color);
@@ -64,6 +98,9 @@
             p {
                 font-family: var(--primary-font);
                 font-size: 2.8rem;
+                @media (max-width: 800px) {
+                    font-size: 2.6rem;
+                }
             }
             .btn {
                 color: #5D85A2;
@@ -76,6 +113,10 @@
             max-height: 365px;
             background-color: #000000;
             overflow: hidden;
+            @media (max-width: 800px) {
+                height: auto;
+                max-height: auto;
+            }
             h5, p {
                 color: var(--bg-color);
             }
