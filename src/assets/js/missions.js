@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText)
 
 
 let __swiper = undefined
-let __indexMisionSelect = undefined
+let __indexMisionSelect = 99999
 const initTrigger = () => {
     gsap.to(".missions__overlay", {
         scrollTrigger: {
