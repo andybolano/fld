@@ -24,7 +24,7 @@ const initTrigger = () => {
             onEnterBack: onEnterBackOnMission
         },
         delay: 3, 
-        left: '-80%', 
+        left: '-100%', 
         opacity:'0.5', 
         ease: 'Power3.easeOut', 
         duration: 3,

@@ -12,17 +12,43 @@ nav {
     z-index: 2;
     transition: top 1s;
     overflow: hidden;
+    @media (max-width: 800px) {
+        height: 5.7rem;
+    }
 
     .menu {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
+        @media (max-width: 800px) {
+            display: none;
+        }
     }
 
     .logo {
-        width: 160px;
-        margin: 0 32px;
+        display: flex;
+        align-items: center;
+        img {
+            width: 16rem;
+            margin: 0 3.2rem;
+        }
+        @media (max-width: 800px) {
+            img {
+                width: 14rem;
+                margin: 0 1rem;
+            }
+        }
+        &__ico-burger {
+            display: none;
+            width: 2rem;
+            height: 2rem;
+            background-image: url('../icons/menu.svg');
+            margin:0 1rem;
+            @media (max-width: 800px) {
+                display: block;
+            }
+         }
     }
 
     ul{
@@ -52,15 +78,24 @@ nav {
         }
     }
     button {
-        width: 130px;
-        height: 77px;
+        width: 13rem;
+        height: 7.7rem;
         background-color: var(--primary-color);
         color: var(--bg-color);
         font-family: var(--primary-font), sans-serif;
+        @media (max-width: 800px) {
+            width: 10rem;
+            height: 5.7rem;
+        }
     }
     .sub-menu {
         display: flex;
         align-items: center;
+        @media (max-width: 800px) {
+            ul {
+                display: none;
+            }
+        }
         ul li a{
             text-transform: capitalize;
             font-weight: 500;
