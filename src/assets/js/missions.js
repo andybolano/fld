@@ -10,9 +10,9 @@ const $ = require('jquery')
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
-let __swiper = undefined
-let __linkMission = undefined
 
+let __swiper = undefined
+let __indexMisionSelect = undefined
 const initTrigger = () => {
     gsap.to(".missions__overlay", {
         scrollTrigger: {
@@ -43,6 +43,7 @@ const onEnterBackOnMission = () => {
 }
 
 const initSliderMissions = () => {
+    console.log('init slider')
     __swiper = new Swiper("#mission-slider", {
         modules : [Pagination, FreeMode],
         lazy: true,
@@ -50,17 +51,28 @@ const initSliderMissions = () => {
         slidesPerView: 'auto',
         centeredSlides: true,
         freeMode: false,
+        slideToClickedSlide: true,
         on: {
             click: function () {
                 if(!this.clickedSlide) return
                 const index = this.clickedSlide.getAttribute('id')
                 flyToPoint(geoJson.features[index].geometry.coordinates)
-                showMissionDescription(this.clickedSlide)
+                hiddenMissionDescription()
+                
+                __indexMisionSelect === index 
+                    ? showMissionDescription(this.clickedSlide)
+                    : __indexMisionSelect = index
+            
             }
-        }
+        },
+        
     })
 
-    $('.swiper-wrapper').on('mouseenter', function(e){
+    __swiper.on('slideChangeTransitionEnd', function () {
+        showMissionDescription(this.clickedSlide)
+    })
+
+    $('.swiper-wrapper').on('mouseenter touchstart touchend', function(e){
         hiddenMissionDescription()
     })
 }
@@ -91,14 +103,14 @@ const hiddenMissionDescription = () => {
 export const sliderGoTo = (index) => {
     hiddenMissionDescription()
     __swiper.slideTo(index, 1000, false)
-    setTimeout(()=> {
+    setTimeout( ()=>{
         showMissionDescription(document.getElementById(index))
-    },1000)
-
+    }, 1000)
+    
+   
 }
 
-export const initMissions = (linkMission) => {
-    __linkMission = linkMission
+export const initMissions = () => {
     initSliderMissions()
     initTrigger()
 }

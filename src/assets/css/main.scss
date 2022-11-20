@@ -120,7 +120,7 @@ section {
 
 footer {
     width: 100%;
-    height: 40vh;
+    height: 45vh;
     background-color: var(--secondary-color);
     padding: 0;
     box-sizing: border-box;
@@ -135,7 +135,7 @@ footer {
     display: flex;
     &__texture {
         width: 5rem;
-        height: 40vh;
+        height: 45vh;
         background-image: url('../images/texture-about.jpg');
         background-size: cover;
         filter: grayscale(100%) opacity(25%);
@@ -157,11 +157,13 @@ footer {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            margin-right: 20rem;
             @media (max-width: 800px) {
                 text-align: center;
                 justify-content: flex-start;
                 align-items: center;
                 margin-bottom: 2rem;
+                margin-right: 0;
             }
         }
     }
@@ -220,6 +222,7 @@ footer {
                     text-decoration: none;
                     color: var(--bg-color);
                     letter-spacing: 0.1rem;
+                    font-weight: 300;
                 }
             }
        }

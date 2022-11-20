@@ -56,11 +56,19 @@ export const geoJson = {
 }
 const map = () => {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keWJvbGFubyIsImEiOiJjandjNHhvdzkwNWFlNGFvdWVvMjYyajVhIn0.0Bb7Pjf8yJPO5icxbfglyQ'
+
+
+    let zoom = 5
+
+    if( window.innerWidth <= 800 ){
+        zoom = 4
+    }
+
     __map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/andybolano/cl9g45ya6002e14pgsiyynuhc',
         center: [-74.297333, 4.570868],
-        zoom: 5
+        zoom: zoom
     })
 
     __map.scrollZoom.disable()

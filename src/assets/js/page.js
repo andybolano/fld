@@ -29,7 +29,6 @@ const setupLinks = (scroller) => {
     const calculatePositions = () => {
         const offset = gsap.getProperty(scroller, "y")
         linkTargets.forEach((e, i) => __linkPositions[i] = e.getBoundingClientRect().top - offset + 1)
-        initMissions(__linkPositions[0])
     }
     
     linkElements.forEach((element, i) => {
@@ -97,3 +96,4 @@ const marquee = () => {
  marquee()
  initMap()
  setupLinks(__container) 
+ initMissions()
