@@ -12,7 +12,8 @@ gsap.registerPlugin(ScrollTrigger, SplitText)
 
 
 let __swiper = undefined
-let __indexMisionSelect = 99999
+let __clickedSlide = undefined
+
 const initTrigger = () => {
     gsap.to(".missions__overlay", {
         scrollTrigger: {
@@ -58,18 +59,13 @@ const initSliderMissions = () => {
                 const index = this.clickedSlide.getAttribute('id')
                 flyToPoint(geoJson.features[index].geometry.coordinates)
                 hiddenMissionDescription()
-                
-                __indexMisionSelect === index 
-                    ? showMissionDescription(this.clickedSlide)
-                    : __indexMisionSelect = index
-            
+                setTimeout (() => {
+                    showMissionDescription(this.clickedSlide)
+                    __clickedSlide = this.clickedSlide
+                }, 500)
             }
         },
         
-    })
-
-    __swiper.on('slideChangeTransitionEnd', function () {
-        showMissionDescription(this.clickedSlide)
     })
 
     $('.swiper-wrapper').on('mouseenter touchstart touchend', function(e){
@@ -97,6 +93,7 @@ const showMissionDescription = (element) => {
 }
 
 const hiddenMissionDescription = () => {
+    __clickedSlide = undefined
     $("#mission-description").css({"opacity": "0", 'height': 0})
 }
 

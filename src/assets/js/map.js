@@ -72,6 +72,8 @@ const map = () => {
     })
 
     __map.scrollZoom.disable()
+    __map.dragRotate.disable();
+    __map.touchZoomRotate.disableRotation();
 
     __map.on('load', () => {
         __map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 })

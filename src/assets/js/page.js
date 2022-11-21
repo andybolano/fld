@@ -33,7 +33,7 @@ const setupLinks = (scroller) => {
     
     linkElements.forEach((element, i) => {
       element.addEventListener("click", e => {
-        e.preventDefault();
+        e.preventDefault()
         goTo(__linkPositions[i])
       })
     }) 
