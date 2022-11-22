@@ -89,6 +89,18 @@ const marquee = () => {
     })
 }
 
+$('.logo__ico-burger').on('click', () => {
+    $('#menu-mobile').toggleClass('menu-mobile--open')
+})
+
+$('body').on('click', (event) => {
+    if(!$(event.target).is('.logo__ico-burger') && !$(event.target).is('#menu-mobile')){
+      $("#menu-mobile").removeClass("menu-mobile--open");
+    }
+ })
+    
+
+
 
  initBanner()
  initAnimationScroll()
