@@ -61,17 +61,17 @@
             line-height: 7.5rem;
             margin: 0;
             margin-bottom: 6rem;
-            @media (max-width: 680px) {
-                letter-spacing: 0rem;
-                font-size: 3.2rem;
-                line-height: 3.5rem;
-                margin-bottom: 3rem;
-            }
             @media (max-width: 880px) {
                 letter-spacing: 0rem;
                 font-size: 4.8rem;
                 line-height: 5.3rem;
                 margin-bottom: 4rem;
+            }
+            @media (max-width: 680px) {
+                letter-spacing: 0rem;
+                font-size: 3.2rem;
+                line-height: 3.5rem;
+                margin-bottom: 3rem;
             }
         }
         a {
@@ -88,12 +88,13 @@
             -moz-transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
             transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
             text-decoration: underline;
-            @media (max-width: 680px) {
-                line-height: 1.8rem;
-            }
             @media (max-width: 880px) {
                 line-height: 1.8rem;
             }
+            @media (max-width: 680px) {
+                line-height: 1.8rem;
+            }
+            
             &:hover {
                 font-size: 1.5rem;
                 letter-spacing: 0;
