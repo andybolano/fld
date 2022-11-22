@@ -5,7 +5,7 @@
     height: 95vh;
     overflow: hidden;
     position: relative;
-    @media (max-width: 800px) {
+    @media (max-width: 680px) {
         height: 80vh;
     }
     &__overlay {
@@ -16,7 +16,7 @@
         top: 0;
         left: 0;
         z-index: 1;
-        @media (max-width: 800px) {
+        @media (max-width: 680px) {
             height: 80vh;
         }
     }
@@ -48,7 +48,7 @@
         -webkit-transition: 0.6s cubic-bezier(0.28, 0, 0.18, 1);
         -moz-transition: 0.6s cubic-bezier(0.28, 0, 0.18, 1);
         transition: 0.6s cubic-bezier(0.28, 0, 0.18, 1);
-        @media (max-width: 800px) {
+        @media (max-width: 680px) {
             width: 90%;
         }
         h1 {
@@ -61,11 +61,17 @@
             line-height: 7.5rem;
             margin: 0;
             margin-bottom: 6rem;
-            @media (max-width: 800px) {
+            @media (max-width: 680px) {
                 letter-spacing: 0rem;
                 font-size: 3.2rem;
                 line-height: 3.5rem;
                 margin-bottom: 3rem;
+            }
+            @media (max-width: 880px) {
+                letter-spacing: 0rem;
+                font-size: 4.8rem;
+                line-height: 5.3rem;
+                margin-bottom: 4rem;
             }
         }
         a {
@@ -82,7 +88,10 @@
             -moz-transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
             transition: 0.1s cubic-bezier(0.28, 0, 0.18, 1);
             text-decoration: underline;
-            @media (max-width: 800px) {
+            @media (max-width: 680px) {
+                line-height: 1.8rem;
+            }
+            @media (max-width: 880px) {
                 line-height: 1.8rem;
             }
             &:hover {
@@ -103,7 +112,7 @@
         z-index: 2;
         display: flex;
         flex-direction: column;
-        @media (max-width: 800px) {
+        @media (max-width: 680px) {
             display: none;
             flex-direction: row;
         }
@@ -155,7 +164,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        @media (max-width: 800px) {
+        @media (max-width: 680px) {
             justify-content: center;
             flex-direction: row;
             left: 50%;
@@ -172,7 +181,7 @@
         margin-bottom: 2rem !important;
         will-change: width;
         opacity: 1;
-        @media (max-width: 800px) {
+        @media (max-width: 680px) {
             width: 3rem;
             height: 0.5rem;
             opacity: 0.5;
@@ -181,7 +190,7 @@
 
     .swiper-pagination-bullet-active {
         width: 7rem;
-        @media (max-width: 800px) {
+        @media (max-width: 680px) {
             width: 3rem;
             opacity: 1;
         }
