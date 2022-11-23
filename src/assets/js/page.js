@@ -27,13 +27,19 @@ const about = () => {
 const initRouter = () => {
     const routeConfig = [
         new Routes({
-        path: 'home',
-        url: './views/home.html'
-    }, true),
-    new Routes({
-        path: 'about',
-        url: './views/about.html'
-    })]
+            path: 'home',
+            url: './views/home.html'
+        }, true),
+        new Routes({
+            path: 'about',
+            url: './views/about.html'
+        }),
+        new Routes({
+            path: 'education',
+            url: './views/education.html'
+        })
+    ]
+  
     
     new Router(routeConfig, 'app', 
         (hash) => {
@@ -41,9 +47,6 @@ const initRouter = () => {
                 setTimeout(()=> {
                     home()
                 },500)
-            }
-            if (hash === 'about') {
-                about()
             }
         }
     )
