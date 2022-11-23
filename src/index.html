@@ -35,7 +35,7 @@
         <div class="menu">
             <ul>
                 <li>
-                    <a href="#aboutus" class="anchor">Nosotros</a>
+                    <a href="#about" class="anchor">Nosotros</a>
                 </li>
                 <li>
                     <a href="#missions" class="anchor">Misiones</a>
@@ -59,7 +59,7 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="#aboutus" class="anchor">Nosotros</a>
+                        <a href="#about" class="anchor">Nosotros</a>
                     </li>
                     <li>
                         <a href="#missions" class="anchor">Misiones</a>
@@ -155,7 +155,11 @@
         </div>
     </div>
     <script>
-        window.location.href = "#home";
+     
+        if (window.location.hash === '') {
+            window.location.href = "#home"
+        }
+       
         function onReady(callback) {
             document.body.style.overflow = 'hidden'
             const intervalId = window.setInterval(function() {

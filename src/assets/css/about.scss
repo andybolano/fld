@@ -1,4 +1,5 @@
 
+/*****Home*****/
 .about-us {
     height: auto;
 }
@@ -230,4 +231,110 @@
             }
 		}
 	}
+}
+
+/***Page***/
+.about-page {
+    height: auto;
+    min-height: 100vh;
+    &__banner {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--tertiary-color);
+        figure {
+            position: relative;
+            margin: 0;
+            background-size: cover;
+            background-position: 100% 20%;
+            background-repeat: no-repeat;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            @media (max-width: 880px) {
+                background-position: center;
+            }
+            &::before {
+                content: 'a';
+                position: absolute;
+                width: 100%;
+                height: 50vh;
+                background: var(--tertiary-color);
+                background: linear-gradient(0deg, rgba(108,94,78,1) 20%, rgba(9,9,121,0) 100%);
+                margin-top: 55vh;
+            }
+        }
+    }
+    &__header {
+        background-color: var(--tertiary-color);
+        height: auto;
+        padding-bottom: 7rem;
+        padding-top: 2rem;
+        text-align: center;
+        h5 {
+            display: block;
+        }
+        h1 {
+            color: var(--bg-color);
+            font-size: 4rem;
+            line-height: 4.5rem;
+            @media (max-width: 880px) {
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+        }
+        p {
+            color: var(--bg-color);
+            font-size: 2rem;
+            letter-spacing: 0.1rem;
+        }
+    }
+    &__video {
+        width: 100%;
+        height: auto;
+        video {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+    &__description {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        h2 {
+            position: absolute;
+            font-family: var(--title-font);
+            color: var(--bg-gray);
+            font-size: 20rem;
+            margin: 0;
+            padding: 0;
+            left: 50%;
+            z-index: -1;
+            opacity: 0.5;
+            font-weight: 100;
+            white-space: nowrap;
+            text-align: center;
+            transform: translate(-50%, -30%);
+            @media (max-width: 880px) {
+                display: none;
+            }
+        }
+        h1 {
+            font-size: 4rem;
+            line-height: 4.5rem;
+            @media (max-width: 880px) {
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+        }
+        p {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            letter-spacing: 0.1rem;
+            font-weight: 400;
+        }
+    }
+
 }

@@ -17,7 +17,11 @@ const home = () => {
     marquee()
     initMap()
     initMissions()
-    setupLinks(__container)
+    ///setupLinks(__container)
+}
+
+const about = () => {
+
 }
 
 const initRouter = () => {
@@ -39,7 +43,7 @@ const initRouter = () => {
                 },300)
             }
             if (hash === 'about') {
-                alert('about')
+                about()
             }
         }
     )
