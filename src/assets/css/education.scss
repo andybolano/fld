@@ -171,6 +171,22 @@
             color: var(--secondary-color);
             font-size: 1.6rem;
         }
+        ul {
+            margin-top: 4rem;
+            list-style: none;
+            li {
+                display: inline;
+                margin: 1rem;
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: var(--tertiary-color);
+
+                }
+            }
+        }
     }
     &__courses {
         display: flex;
@@ -181,7 +197,7 @@
             flex-direction: column;
         }
         div {
-            width: 25%;
+            width: 20%;
             height: 60vh;
             background-position: center;
             background-size: cover;
@@ -210,6 +226,15 @@
                 position: absolute;
                 bottom: 5rem;
             }
+        }
+        .overlay {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.4);
+            width: 100%;
+            height: 100%;
+            top:0;
+            left: 0;
+            z-index: 1;
         }
     }
     &__requirements {
