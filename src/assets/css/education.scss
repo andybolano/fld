@@ -134,3 +134,125 @@
         }
     }
 }
+
+
+.education-page {
+    height: auto;
+    min-height: 100vh;
+    &__banner {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        background-color: var(--bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        text-align: center;
+        @media (max-width: 880px) {
+            height: 50vh;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+        h1 {
+            display: block;
+            font-size: 7rem;
+            letter-spacing: 0;
+            background-image: -webkit-linear-gradient(-360deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            background-image: linear-gradient(90deg,var(--secondary-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            color: rgba(0, 0, 0, 0) !important;
+            margin-bottom: 1rem;
+            @media (max-width: 880px) {
+                font-size: 4rem;
+                line-height: 4rem;
+            }
+        }
+        p {
+            color: var(--secondary-color);
+            font-size: 1.6rem;
+        }
+    }
+    &__courses {
+        display: flex;
+        height: auto;
+        margin-bottom: 10vh;
+        flex-direction: row;
+        @media (max-width: 880px) {
+            flex-direction: column;
+        }
+        div {
+            width: 25%;
+            height: 60vh;
+            background-position: center;
+            background-size: cover;
+            padding: 3rem;
+            box-sizing: border-box;
+            position: relative;
+            cursor: pointer;
+            @media (max-width: 880px) {
+                width: 100%;
+            }
+            h5 {
+                margin-top: 10vh;
+                color: var(--bg-color);
+                display: block;
+            }
+            h1 {
+                color: var(--bg-color);
+                font-size: 4rem;
+                line-height: 4.5rem;
+                display: block;
+            }
+            button {
+                background-color: rgba(69, 180, 103, 0.8);
+                padding: 2rem 4rem;
+                font-weight: 500;
+                position: absolute;
+                bottom: 5rem;
+            }
+        }
+    }
+    &__requirements {
+        margin-bottom: 10rem;
+        div {
+            margin-top: 5rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 4rem;
+            @media (max-width: 880px) {
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+        }
+        h2 {
+            position: absolute;
+            font-family: var(--title-font);
+            color: var(--bg-gray);
+            font-size: 20rem;
+            margin: 0;
+            padding: 0;
+            left: 50%;
+            z-index: -1;
+            opacity: 0.5;
+            font-weight: 100;
+            white-space: nowrap;
+            text-align: center;
+            transform: translate(-50%, -30%);
+            @media (max-width: 880px) {
+                display: none;
+            }
+        }
+        p {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            margin-left: 2rem;
+            letter-spacing: 0.1rem;
+        }
+    }
+}
+
+
+.education-page .container {
+    max-width: 110rem;
+}
