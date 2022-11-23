@@ -34,7 +34,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'src/assets/images', to: '../dist/assets/images' }
+        { from: 'src/assets/images', to: '../dist/assets/images' },
+        { from: 'src/views', to: '../dist/views' }
       ],
     })
   ],

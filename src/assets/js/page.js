@@ -6,7 +6,44 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import { initBanner } from './banner'
 import { initMissions } from './missions'
 import { initMap } from './map'
+import { Router, Routes } from '../lib/router'
 const $ = require('jquery')
+
+
+const home = () => {
+    initAnimationScroll()
+    initBanner()
+    animateNavbar()
+    marquee()
+    initMap()
+    initMissions()
+    setupLinks(__container)
+}
+
+const initRouter = () => {
+    const routeConfig = [
+        new Routes({
+        path: 'home',
+        url: './views/home.html'
+    }, true),
+    new Routes({
+        path: 'about',
+        url: './views/about.html'
+    })]
+    
+    new Router(routeConfig, 'app', 
+        (hash) => {
+            if (hash === 'home') {
+                setTimeout(()=> {
+                    home()
+                },300)
+            }
+            if (hash === 'about') {
+                alert('about')
+            }
+        }
+    )
+}
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, ScrollToPlugin)
 const __container = document.querySelector("#smooth-content")
@@ -39,7 +76,6 @@ const setupLinks = (scroller) => {
     }) 
     ScrollTrigger.addEventListener("refresh", calculatePositions)
 }
-
 
 export const goTo = (linkPosition) => {
     gsap.to(window, {scrollTo: linkPosition, ease: "power4", overwrite: true})
@@ -99,13 +135,6 @@ $('body').on('click', (event) => {
     }
  })
     
+initRouter()
 
 
-
- initBanner()
- initAnimationScroll()
- animateNavbar()
- marquee()
- initMap()
- setupLinks(__container) 
- initMissions()

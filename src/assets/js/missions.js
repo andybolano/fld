@@ -44,7 +44,7 @@ const onEnterBackOnMission = () => {
 }
 
 const initSliderMissions = () => {
-    console.log('init slider')
+
     __swiper = new Swiper("#mission-slider", {
         modules : [Pagination, FreeMode],
         lazy: true,
