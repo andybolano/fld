@@ -40,7 +40,7 @@ const initRouter = () => {
             if (hash === 'home') {
                 setTimeout(()=> {
                     home()
-                },300)
+                },500)
             }
             if (hash === 'about') {
                 about()
