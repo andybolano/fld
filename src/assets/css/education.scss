@@ -183,7 +183,9 @@
                     font-size: 1.2rem;
                     font-weight: 600;
                     color: var(--tertiary-color);
-
+                    &:hover {
+                        transform: scale(1.1);
+                    }
                 }
             }
         }
@@ -242,14 +244,6 @@
         div {
             margin-top: 5rem;
         }
-        h1 {
-            text-align: center;
-            font-size: 4rem;
-            @media (max-width: 880px) {
-                font-size: 3rem;
-                line-height: 3.5rem;
-            }
-        }
         h2 {
             position: absolute;
             font-family: var(--title-font);
@@ -272,7 +266,6 @@
             font-size: 1.6rem;
             color: var(--secondary-color);
             margin-left: 2rem;
-            letter-spacing: 0.1rem;
         }
     }
 }
