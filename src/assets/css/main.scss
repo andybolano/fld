@@ -10,6 +10,7 @@
     --primary-color: #45B467;
     --secondary-color: #2E4756;
     --tertiary-color: #6C5E4E;
+    --four-color: #613F5A;
     --bg-gray: #ebebeb;
     --primary-font: 'Lato';
     --title-font: 'Fhphemister';
@@ -123,6 +124,29 @@ h5 {
         width: calc(100% - 2rem);
     }
 }
+
+.container-text {
+    width: calc(100% - 14vw);
+    margin: auto;
+    margin-top: 5rem;
+    @media (max-width: 880px) {
+        width: calc(100% - 4rem);
+    }
+    @media (max-width: 680px) {
+        width: calc(100% - 2rem);
+    }
+}
+
+.container-title {
+    width: calc(100% - 18vw);
+    @media (max-width: 880px) {
+        width: calc(100% - 4rem);
+    }
+    @media (max-width: 680px) {
+        width: calc(100% - 2rem);
+    }
+}
+
 
 section {
     height: 100vh;
