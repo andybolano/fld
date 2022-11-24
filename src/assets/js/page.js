@@ -89,16 +89,22 @@ export const goTo = (linkPosition) => {
 }
 
 const animateNavbar = () => {
-    let prevScrollpos = window.pageYOffset;
+    let prevScrollpos = window.pageYOffset
+    const top = 400
     window.onscroll = function() {
-        const currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-            document.getElementById("navbar").style.top = "0";
-        } else {
-            document.getElementById("navbar").style.top = "-7.7rem";
-        }
-        prevScrollpos = currentScrollPos;
+        let nav = document.getElementById('navbar')
+        const currentScrollPos = window.pageYOffset
+        prevScrollpos > currentScrollPos ?  nav.style.top = "0" : nav.style.top = "-7.7rem"
+        currentScrollPos >= top ? nav.classList.add('nav-with-color') : nav.classList.remove('nav-with-color');
+        prevScrollpos = currentScrollPos
+
+
+
+       
+       
     }
+
+
 }
 
 const marquee = () => {
