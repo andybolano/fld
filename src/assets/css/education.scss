@@ -166,26 +166,7 @@
             p {
                 color: var(--secondary-color);
                 font-size: 1.6rem;
-            }
-            ul {
-                margin: 0;
-                padding: 0;
-                margin-top: 4rem;
-                list-style: none;
-                li {
-                    margin: 0;
-                    margin-bottom: 1rem;
-                    a {
-                        text-decoration: none;
-                        text-transform: capitalize;
-                        font-size: 1.4rem;
-                        font-weight: 600;
-                        color: var(--secondary-color);
-                        &:hover {
-                            transform: scale(1.1);
-                        }
-                    }
-                }
+               
             }
         }
     }
@@ -227,6 +208,16 @@
                 font-weight: 600;
                 position: absolute;
                 bottom: 6rem;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    margin-left: 0.3rem;
+                    margin-top: -0.4rem;
+                    background-image: url('../icons/chevron-left-white.svg');
+                    background-size: contain;
+                }
             }
         }
         .overlay {
@@ -237,6 +228,38 @@
             top:0;
             left: 0;
             z-index: 1;
+        }
+    }
+    &__link {
+        ul {
+            margin: 0;
+            padding: 0;
+            margin-top: 4rem;
+            list-style: none;
+            li {
+                display: inline;
+                margin-right: 4rem;
+                a {
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    color: var(--secondary-color);
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 2rem;
+                        height: 2rem;
+                        margin-left: 0rem;
+                        margin-top: -0.1rem;
+                        background-image: url('../icons/chevron-left.svg');
+                        background-size: contain;
+                    }
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
         }
     }
     &__requirements {
@@ -265,11 +288,15 @@
         p {
             font-size: 1.6rem;
             color: var(--secondary-color);
+            font-weight: 500;
         }
 
         table {
             h1 {
                 font-size: 4rem;
+            }
+            p {
+                margin-left: 1rem;
             }
         }
     }
