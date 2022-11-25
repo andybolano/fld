@@ -42,10 +42,18 @@ const initRouter = () => {
     
     new Router(routeConfig, 'app', 
         (hash) => {
+
+            $('.anchor').removeClass('active')
             if (hash === 'home') {
                 setTimeout(()=> {
                     home()
                 },500)
+            }
+            if (hash === 'about') {
+                $('#about').addClass('active')
+            }
+            if (hash === 'education') {
+                $('#education').addClass('active')
             }
         }
     )
