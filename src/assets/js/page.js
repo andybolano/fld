@@ -13,7 +13,6 @@ const $ = require('jquery')
 const home = () => {
     initAnimationScroll()
     initBanner()
-    animateNavbar()
     marquee()
     initMap()
     initMissions()
@@ -90,26 +89,19 @@ export const goTo = (linkPosition) => {
 
 const animateNavbar = () => {
     let prevScrollpos = window.pageYOffset
-    const top = 400
+    const top = 300
     window.onscroll = function() {
         let nav = document.getElementById('navbar')
         const currentScrollPos = window.pageYOffset
         prevScrollpos > currentScrollPos ?  nav.style.top = "0" : nav.style.top = "-7.7rem"
         currentScrollPos >= top ? nav.classList.add('nav-with-color') : nav.classList.remove('nav-with-color');
         prevScrollpos = currentScrollPos
-
-
-
-       
-       
     }
-
-
 }
 
 const marquee = () => {
     $(".marquee").each(function () {
-        let rate = 50
+        const rate = 50
         let m = $(this)
         if (m.hasClass("run")) return
         let el = m.find("span")
@@ -149,5 +141,5 @@ $('body').on('click', (event) => {
  })
     
 initRouter()
-
+animateNavbar()
 
