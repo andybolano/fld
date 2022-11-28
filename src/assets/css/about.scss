@@ -237,6 +237,23 @@
 .about-page {
     height: auto;
     min-height: 100vh;
+    &__overlay {
+        position: absolute;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
+        background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
+        @media (max-width: 680px) {
+            width: 100%;
+        }
+    }
     &__header {
         background-color: var(--four-color);
         height: auto;
@@ -259,6 +276,7 @@
     &__video {
         width: 100%;
         height: auto;
+        position: relative;
         video {
             margin: 0;
             padding: 0;

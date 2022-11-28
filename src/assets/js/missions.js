@@ -5,7 +5,6 @@ import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Swiper, { Pagination, FreeMode } from 'swiper'
 import { geoJson, flyToPoint } from './map'
-import { goTo } from './page'
 const $ = require('jquery')
 
 gsap.registerPlugin(ScrollTrigger, SplitText)

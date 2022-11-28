@@ -7,20 +7,19 @@ import { initBanner } from './banner'
 import { initMissions } from './missions'
 import { initMap } from './map'
 import { Router, Routes } from '../lib/router'
+import { initAbout } from './about'
 const $ = require('jquery')
 
 
 const home = () => {
-    initAnimationScroll()
     initBanner()
     marquee()
     initMap()
     initMissions()
-    ///setupLinks(__container)
 }
 
 const about = () => {
-
+    initAbout()
 }
 
 const initRouter = () => {
@@ -51,9 +50,11 @@ const initRouter = () => {
             }
             if (hash === 'about') {
                 $('#about').addClass('active')
+                about()
             }
             if (hash === 'education') {
                 $('#education').addClass('active')
+             
             }
         }
     )
@@ -150,4 +151,5 @@ $('body').on('click', (event) => {
     
 initRouter()
 animateNavbar()
+initAnimationScroll()
 

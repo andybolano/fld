@@ -52,6 +52,9 @@ const getElementById = (id) => {
 
 const addZoomEffect = (indexElement) => {
     const elements = document.querySelectorAll('.banner__image')
+    if (!elements.length) {
+        return
+    }
     setTimeout( ()=> {
         elements.forEach((element, index) => {
             if (index !== indexElement)
