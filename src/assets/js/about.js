@@ -15,7 +15,7 @@ const initTrigger = () => {
             markers: false,
             trigger: ".about-page__overlay"
         },
-        delay: 5, 
+        delay: 10, 
         left: '-100%', 
         opacity:'0.5', 
         ease: 'Power3.easeOut', 

@@ -8,6 +8,7 @@ import { initMissions } from './missions'
 import { initMap } from './map'
 import { Router, Routes } from '../lib/router'
 import { initAbout } from './about'
+import { initEducation } from './education'
 const $ = require('jquery')
 
 
@@ -20,6 +21,10 @@ const home = () => {
 
 const about = () => {
     initAbout()
+}
+
+const education = () => {
+    initEducation()
 }
 
 const initRouter = () => {
@@ -54,6 +59,7 @@ const initRouter = () => {
             }
             if (hash === 'education') {
                 $('#education').addClass('active')
+                education()
              
             }
         }
