@@ -17,6 +17,7 @@
     }
     .wrapper-about__entry--one p{
         font-size: 1.8rem;
+        line-height: 2.4rem;
     }
     .wrapper-about__entry--two ul {
         margin: 0;
@@ -34,5 +35,6 @@
     }
     .wrapper-about__overlay {
         background-color: rgba(0, 0, 0, 0.5);
+        max-height: auto;
     }
 }

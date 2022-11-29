@@ -133,7 +133,7 @@
             overflow: hidden;
             @media (max-width: 680px) {
                 height: auto;
-                max-height: auto;
+                max-height: fit-content;
             }
             h5, p {
                 color: var(--bg-color);
@@ -159,7 +159,7 @@
 
         @media (max-width: 680px) {
             height: auto;
-            max-height: auto;
+            max-height: fit-content;
             padding: 4rem 2rem;
         }
         
