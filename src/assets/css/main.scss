@@ -11,6 +11,7 @@
     --secondary-color: #2E4756;
     --tertiary-color: #6C5E4E;
     --four-color: #613F5A;
+    --orange-color: #f7923f;
     --bg-gray: #ebebeb;
     --primary-font: 'Lato';
     --title-font: 'Fhphemister';
@@ -376,4 +377,14 @@ input, textarea {
             bottom: -0.1rem;
         }
     }
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }

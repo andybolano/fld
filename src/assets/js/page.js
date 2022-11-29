@@ -40,6 +40,10 @@ const initRouter = () => {
         new Routes({
             path: 'education',
             url: './views/education.html'
+        }),
+        new Routes({
+            path: 'education/course',
+            url: './views/course.html'
         })
     ]
   
@@ -57,7 +61,7 @@ const initRouter = () => {
                 $('#about').addClass('active')
                 about()
             }
-            if (hash === 'education') {
+            if (hash.split('/')[0] === 'education' ) {
                 $('#education').addClass('active')
                 education()
              

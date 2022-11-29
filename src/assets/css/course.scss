@@ -1,0 +1,38 @@
+.course-page {
+    height: auto;
+    min-height: 100vh;
+    &__banner {
+        width: 100%;
+        height: 95vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+       .overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: var(--bg-color);
+       }
+    }
+    .wrapper-about__entry--one p{
+        font-size: 1.8rem;
+    }
+    .wrapper-about__entry--two ul {
+        margin: 0;
+        padding: 0;
+        margin-top: 2rem;
+    }
+    .wrapper-about__entry--two li{
+        margin: 0;
+        font-size: 1.8rem;
+        color: var(--bg-color);
+        margin-bottom: 1rem;
+    }
+    .wrapper-about__bg-entry {
+        background-image: url('../images/education/agroecologia.jpg');
+    }
+    .wrapper-about__overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
