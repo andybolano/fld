@@ -2,6 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   entry: './src/index.js',
@@ -39,5 +41,9 @@ module.exports = {
       ],
     })
   ],
-  devtool: "inline-source-map"
+  devtool: "inline-source-map",
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin(),    new CssMinimizerPlugin()],
+  }
 };
