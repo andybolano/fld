@@ -22,9 +22,9 @@
     .wrapper-about__entry--two ul {
         margin: 0;
         padding: 0;
-        margin-top: 2rem;
     }
     .wrapper-about__entry--two li{
+        list-style: none;
         margin: 0;
         font-size: 1.8rem;
         color: var(--bg-color);

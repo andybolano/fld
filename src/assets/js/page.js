@@ -1,5 +1,6 @@
 
 import gsap from 'gsap'
+import WOW from 'wow.js'
 import ScrollSmoother from 'gsap/ScrollSmoother'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
@@ -11,6 +12,25 @@ import { initAbout } from './about'
 import { initEducation } from './education'
 const $ = require('jquery')
 
+
+const initWow = () => {
+    const wow = new WOW(
+        {
+          boxClass:     'wow',      // animated element css class (default is wow)
+          animateClass: 'animated', // animation css class (default is animated)
+          offset:       2,          // distance to the element when triggering the animation (default is 0)
+          mobile:       true,       // trigger animations on mobile devices (default is true)
+          live:         true,       // act on asynchronously loaded content (default is true)
+          callback:     function(box) {
+            // the callback is fired every time an animation is started
+            // the argument that is passed in is the DOM node being animated
+          },
+          scrollContainer: null,    // optional scroll container selector, otherwise use window,
+          resetAnimation: true,     // reset animation on end (default is true)
+        }
+      );
+      wow.init();
+}
 
 const home = () => {
     initBanner()
@@ -50,7 +70,7 @@ const initRouter = () => {
     
     new Router(routeConfig, 'app', 
         (hash) => {
-
+            $('html,body').scrollTop(0);
             $('.anchor').removeClass('active')
             if (hash === 'home') {
                 setTimeout(()=> {
@@ -162,4 +182,5 @@ $('body').on('click', (event) => {
 initRouter()
 animateNavbar()
 initAnimationScroll()
+initWow()
 

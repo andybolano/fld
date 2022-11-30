@@ -159,20 +159,12 @@
         </div>
     </div>
     <script>
-     
+
+        document.body.classList.add("stop-scrolling");
+        document.body.style.overflow = 'hidden'
+
         if (window.location.hash === '') {
             window.location.href = "#home"
-        }
-       
-        function onReady(callback) {
-            document.body.classList.add("stop-scrolling");
-            document.body.style.overflow = 'hidden'
-            const intervalId = window.setInterval(function() {
-                if (document.getElementsByTagName('body')[0] !== undefined) {
-                window.clearInterval(intervalId);
-                    callback.call(this);
-                }
-            }, 1000)
         }
 
         function setVisible(selector, visible) {
@@ -180,11 +172,11 @@
             document.body.style.overflow = 'auto'
             document.body.classList.remove("stop-scrolling");
         }
-
-        onReady(function() {
+        
+        addEventListener('DOMContentLoaded', (event) => {
             setVisible('.page', true)
             setVisible('#loading', false)
-        });
+        })
     </script>
 </body>
 </html>
