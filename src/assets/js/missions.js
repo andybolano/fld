@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Swiper, { Pagination, FreeMode } from 'swiper'
-import { geoJson, flyToPoint } from './map'
+import { geoJson, flyToPoint, initMap } from './map'
 const $ = require('jquery')
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
@@ -29,7 +29,8 @@ const initTrigger = () => {
         ease: 'Power3.easeOut', 
         duration: 3,
         onComplete() {
-            
+            initMap()
+            document.getElementById('video-mission').setAttribute("src",'https://player.vimeo.com/video/722495234')
         }
     })
 }

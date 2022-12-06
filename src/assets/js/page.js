@@ -6,7 +6,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import { initBanner } from './banner'
 import { initMissions } from './missions'
-import { initMap } from './map'
+
 import { Router, Routes } from '../lib/router'
 import { initAbout } from './about'
 import { initEducation } from './education'
@@ -35,7 +35,6 @@ const initWow = () => {
 const home = () => {
     initBanner()
     marquee()
-    initMap()
     initMissions()
 }
 

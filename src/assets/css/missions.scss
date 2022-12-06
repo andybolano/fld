@@ -87,6 +87,9 @@
         height: 80vh;
         background-color: black;
         overflow: hidden;
+        background-image: url('../images/missions/map.JPG');
+        background-position: center;
+        background-size: cover;
     }
     &__overlay {
         position: absolute;
