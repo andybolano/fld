@@ -163,7 +163,7 @@ footer {
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
-    @media (max-width: 880px) {
+    @media (max-width: 1000px) {
         height: auto;
     }
 }
@@ -176,7 +176,7 @@ footer {
         background-image: url('../images/texture-about.jpg');
         background-size: cover;
         filter: grayscale(100%) opacity(25%);
-        @media (max-width: 880px) {
+        @media (max-width: 1000px) {
            display: none;
         }
     }
@@ -186,7 +186,7 @@ footer {
         box-sizing: border-box;
         height: 30vh;
 
-        @media (max-width: 880px) {
+        @media (max-width: 1000px) {
             height: auto;
             flex-direction: column;
             padding: 2rem 0;
@@ -195,8 +195,11 @@ footer {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            margin-right: 20rem;
-            @media (max-width: 880px) {
+            width: 40%;
+            @media (max-width: 1300px) {
+                width: auto;
+            }
+            @media (max-width: 1000px) {
                 text-align: center;
                 justify-content: flex-start;
                 align-items: center;
@@ -212,7 +215,7 @@ footer {
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        @media (max-width: 880px) {
+        @media (max-width: 1000px) {
             margin: 2rem;
         }
     }
@@ -221,7 +224,7 @@ footer {
         flex-direction: row;
         width: auto;
         z-index: 2;
-        @media (max-width: 880px) {
+        @media (max-width: 1000px) {
             align-items: center;
             justify-content: center;
           
@@ -230,7 +233,7 @@ footer {
             width: 2.4rem;
             height: 2.4rem;
             margin-left: 1.6rem;
-            @media (max-width: 880px) {
+            @media (max-width: 1000px) {
                 margin:1rem;
             }
         }
@@ -277,7 +280,7 @@ footer {
         color: var(--bg-color);
         left: -10.5rem;
         transform: rotate(-90deg);
-        @media (max-width: 880px) {
+        @media (max-width: 1000px) {
             position: relative;
             transform: none;
             top: 0;

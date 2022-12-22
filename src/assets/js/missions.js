@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText)
 
 let __swiper = undefined
 let __clickedSlide = undefined
+let __linkMission = undefined
 
 const initTrigger = () => {
     gsap.to(".missions__overlay", {
@@ -36,11 +37,14 @@ const initTrigger = () => {
 }
 
 const onEnterOnMission = () => {
-    //goTo(__linkMission)
+    goTo(__linkMission)
 }
 
 const onEnterBackOnMission = () => {
-    //goTo(__linkMission)
+    goTo(__linkMission)
+}
+export const goTo = (linkPosition) => {
+    gsap.to(window, {scrollTo: linkPosition, ease: "power4", overwrite: true})
 }
 
 const initSliderMissions = () => {
@@ -107,7 +111,8 @@ export const sliderGoTo = (index) => {
    
 }
 
-export const initMissions = () => {
+export const initMissions = (link) => {
+    __linkMission = link
     initSliderMissions()
     initTrigger()
 }

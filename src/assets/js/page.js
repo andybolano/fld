@@ -6,12 +6,13 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import { initBanner } from './banner'
 import { initMissions } from './missions'
-
 import { Router, Routes } from '../lib/router'
 import { initAbout } from './about'
 import { initEducation } from './education'
-const $ = require('jquery')
 
+const $ = require('jquery')
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger, ScrollToPlugin)
+const __container = document.querySelector("#smooth-content")
 
 const initWow = () => {
     const wow = new WOW(
@@ -35,7 +36,9 @@ const initWow = () => {
 const home = () => {
     initBanner()
     marquee()
-    initMissions()
+    const offset = gsap.getProperty(__container, "y")
+    const missionPosition = document.getElementById('missions').getBoundingClientRect().top - offset + 1
+    initMissions(missionPosition)
 }
 
 const about = () => {
@@ -89,8 +92,6 @@ const initRouter = () => {
     )
 }
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger, ScrollToPlugin)
-const __container = document.querySelector("#smooth-content")
 
 
 const initAnimationScroll = () => {
@@ -103,13 +104,16 @@ const initAnimationScroll = () => {
     })
 }
 
+/*
 const setupLinks = (scroller) => {
     let __linkPositions = []
     const linkElements = gsap.utils.toArray('.menu .anchor')
     const linkTargets = linkElements.map((e) => document.querySelector(e.getAttribute("href")))
     const calculatePositions = () => {
         const offset = gsap.getProperty(scroller, "y")
-        linkTargets.forEach((e, i) => __linkPositions[i] = e.getBoundingClientRect().top - offset + 1)
+        linkTargets.forEach((e, i) => {
+            __linkPositions[i] = e.getBoundingClientRect().top - offset + 1
+        })
     }
     
     linkElements.forEach((element, i) => {
@@ -117,13 +121,14 @@ const setupLinks = (scroller) => {
         e.preventDefault()
         goTo(__linkPositions[i])
       })
-    }) 
-    ScrollTrigger.addEventListener("refresh", calculatePositions)
+    })
+  
+   ScrollTrigger.addEventListener("refresh", calculatePositions)
 }
 
 export const goTo = (linkPosition) => {
     gsap.to(window, {scrollTo: linkPosition, ease: "power4", overwrite: true})
-}
+}*/
 
 const animateNavbar = () => {
     let prevScrollpos = window.pageYOffset
